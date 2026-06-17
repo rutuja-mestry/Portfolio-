@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rutuja Mestry Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#444851;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(223,207,208,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h2{
+    color:#8b5cf6;
+}
+
+.menu-container{
+    position:relative;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    font-size:30px;
+    color:#8b5cf6;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    position:absolute;
+    right:0;
+    top:45px;
+    background:#1e293b;
+    border-radius:12px;
+    min-width:180px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.menu a{
+    display:block;
+    padding:12px 18px;
+    color:white;
+    text-decoration:none;
+}
+
+.menu a:hover{
+    background:#6366f1;
+}
+
+.menu.show{
+    display:block;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:11px 10% 40px;
+    gap:50px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:70px;
+    line-height:1;
+    background:linear-gradient(to right,#4aacd3,#8b5cf6);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-text p{
+    margin:15px 0;
+    font-size:22px;
+    color:#80b0f4;
+}
+
+.btn{
+    margin-top:15px;
+    margin-right:10px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(to right,#d260bd,#8b5cf6);
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.hero-img{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-img img{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:50% 12%;
+    border:5px solid #6366f1;
+    box-shadow:0 0 40px rgba(99,102,241,0.8);
+}
+
+section{
+    padding:80px 10%;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.skills span{
+    background:#1e293b;
+    padding:8px 15px;
+    margin:5px;
+    display:inline-block;
+    border-radius:20px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+}
+
+.project a{
+    display:inline-block;
+    margin-top:10px;
+    margin-right:10px;
+    padding:8px 15px;
+    border-radius:20px;
+    background:#6366f1;
+    color:white;
+    text-decoration:none;
+}
+
+.linkedin-link{
+    color:white;
+    text-decoration:none;
+}
+
+.linkedin-link:hover{
+    color:#38bdf8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero-text h1{
+        font-size:75px;
+    }
+
+    .hero-text p{
+        font-size:18px;
+    }
+
+    .hero-img img{
+        width:220px;
+        height:220px;
+    }
+
+    .btn{
+        display:block;
+        margin:15px auto;
+        width:220px;
+    }
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#cbd5f5;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Rutuja</h2>
+
+    <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <div class="menu" id="menu">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="hero">
+
+    <div class="hero-text">
+        <h1>Rutuja<br>Mestry</h1>
+
+        <p>BBA(CA) Student | Web Developer</p>
+
+        <a href="Resume.pdf" target="_blank" class="btn">View Resume</a>
+        <a href="https://github.com/rutuja-mestry" target="_blank" class="btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/rutuja-mestry-2734b6296" target="_blank" class="btn">LinkedIn</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="Profile.jpg" alt="Rutuja Mestry">
+    </div>
+
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        Motivated BBA(CA) student with strong skills in Java, Python, HTML, CSS, JavaScript and MySQL. Passionate about building real-world websites and learning new technologies.
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="card skills">
+        <span>Java</span>
+        <span>Python</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>MySQL</span>
+        <span>Spring Boot</span>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Hospital Management System</h3>
+            <p>Doctor appointment system using Python & MySQL.</p>
+            <a href="#">Live</a>
+            <a href="https://github.com/rutuja-mestry">Code</a>
+        </div>
+
+        <div class="project">
+            <h3>Bus Pass Management System</h3>
+            <p>Online bus pass system for students.</p>
+            <a href="#">Live</a>
+            <a href="https://github.com/rutuja-mestry">Code</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+
+    <div class="card">
+        <p>📞 7588968239</p>
+        <p>📧 rutujamestry2004@gmail.com</p>
+
+        <br>
+
+        <a href="https://www.linkedin.com/in/rutuja-mestry-2734b6296" target="_blank" class="linkedin-link">
+            LinkedIn Profile
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Rutuja Mestry
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.menu-btn')) {
+        let menu = document.getElementById("menu");
+        if (menu.classList.contains("show")) {
+            menu.classList.remove("show");
+        }
+    }
+}
+</script>
+
+</body>
+</html>
